@@ -238,7 +238,7 @@ if __name__ == '__main__':
     prntTime('Collecting master data file') # Get data from Master Ref spreadsheet
     masterFile = FindMasterFile('//livoffice01/DATA/share/DIGITAL/Interconnect Billing/NCIP/Master Files/')
 
-    URLs = UpdateURLsList(r'C:\Users\ggb02\OneDrive - Sky\Documents\Python\Automation\notifURLs.csv')
+    URLs = UpdateURLsList(r'notifURLs.csv')
 
     url = URLs[-1]
     prntTime('Downloading Data from '+url[0])
@@ -271,7 +271,7 @@ if __name__ == '__main__':
         intMobData = pd.concat([intMobData, pd.DataFrame(newData)])
 
     prntTime('Writing to Excel')
-    intMobData.to_excel(r'C:\Users\ggb02\OneDrive - Sky\Documents\Python\Automation\Intl Final.xlsx', index=False, header=False)
+    intMobData.to_excel(r'Intl Final.xlsx', index=False, header=False)
 
     print('Success:\n ', intMobData.shape[0], 'records')
     print('Fixed rows:\n ',fixed)
@@ -295,7 +295,7 @@ if __name__ == '__main__':
     nonGeoData = pd.DataFrame(nonGeoData)
 
     prntTime('Writing to Excel')
-    nonGeoData.to_excel(r'C:\Users\ggb02\OneDrive - Sky\Documents\Python\Automation\Non Geo Final.xlsx', index=False, header=False)
+    nonGeoData.to_excel(r'Non Geo Final.xlsx', index=False, header=False)
     print('Success:\n ',nonGeoData.shape[0], 'records')
 
     prntTime('Done')
